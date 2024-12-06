@@ -6,10 +6,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            string task = "83 + 9 * (6 /3)";
+            string task = "83 + 9 * 6 /31 - 10";
             string tmp = "";
             List<int> objects = new List<int>();
-            for(UInt16 i = 0; i < task.Length; i++)
+            List<char> tasks = new List<char>();
+            for (UInt16 i = 0; i < task.Length; i++)
             {
                 if (task[i] != ' ')
                 {
@@ -33,10 +34,20 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     }
                 }
             }
-            Console.WriteLine(task);
+            for (UInt16 i = 0; i < task.Length; i++)
+            {
+                if (new char[] {'+', '-', '*', '/' }.Contains(task[i])) {
+                    tasks.Add(task[i]);
+                }
+            }
+            // Output
             for (int i = 0; i < objects.Count; i++)
             {
                 Console.WriteLine(objects[i]);
+            }
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                Console.WriteLine(tasks[i]);
             }
         }
     }
