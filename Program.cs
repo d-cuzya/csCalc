@@ -7,7 +7,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
         static void Main(string[] args)
         {
             string task = "8 + 9 * (6 /3)";
-            Console.WriteLine();
+            Console.WriteLine(task);
         }
     }
 }
